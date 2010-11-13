@@ -10,3 +10,6 @@
 *.tmproj
 *.kpf
 
+# Egg info, for when installed through Pip.
+libreveal.egg-info
+

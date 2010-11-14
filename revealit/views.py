@@ -15,5 +15,5 @@ def uwsgi_reload(request):
         except ImportError:
             return HttpResponseServerError('Failed to import uwsgi')
 
-    return HttpResponseForbidden('Access denied. You are not on the INTERNAL_IPS list')
+    return HttpResponseForbidden('Access denied. %s is not on the INTERNAL_IPS list.' % request.META['REMOTE_ADDR'])
 

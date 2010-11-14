@@ -1,7 +1,9 @@
 """ Utility view functions """
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseForbidden, HttpResponseServerError
+from django.views.decorators.cache import never_cache
 
+@never_cache
 def uwsgi_reload(request):
     allowed_ips = getattr(settings, 'INTERNAL_IPS', ('127.0.0.1',),)
 
